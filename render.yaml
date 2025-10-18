@@ -21,12 +21,12 @@ services:
           name: grantwriter-ai-redis
           property: connectionString
 
+  - type: redis
+    name: grantwriter-ai-redis
+    plan: free
+    maxmemoryPolicy: noeviction
+
 databases:
   - name: grantwriter-ai-db
     databaseName: grantwriter_ai_production
     user: grantwriter_ai
-
-  - name: grantwriter-ai-redis
-    type: redis
-    plan: free
-    maxmemoryPolicy: noeviction
