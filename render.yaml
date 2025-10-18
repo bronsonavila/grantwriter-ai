@@ -25,6 +25,7 @@ services:
     name: grantwriter-ai-redis
     plan: free
     maxmemoryPolicy: noeviction
+    ipAllowList: []
 
 databases:
   - name: grantwriter-ai-db
