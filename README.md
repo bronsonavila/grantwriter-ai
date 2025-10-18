@@ -1,6 +1,6 @@
 # GrantWriter AI Assistant
 
-A Rails 7 demo application that uses Google Gemini AI to generate grant proposal drafts. Built to showcase AI integration, A/B testing, analytics implementation, and modern frontend development with Hotwire.
+A Ruby on Rails demo application that uses Google Gemini AI to generate grant proposal drafts. Built to showcase AI integration, A/B testing, analytics implementation, and modern frontend development with Hotwire.
 
 ## Live Demo
 
