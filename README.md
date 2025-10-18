@@ -6,6 +6,8 @@ A Rails 7 demo application that uses Google Gemini AI to generate grant proposal
 
 **[https://grantwriter-ai.onrender.com](https://grantwriter-ai.onrender.com)**
 
+![Demo](docs/images/demo.gif)
+
 ## Tech Stack
 
 - **Backend**: Ruby 3.3.9, Rails 7.1
