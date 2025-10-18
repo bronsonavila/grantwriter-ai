@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Document -->
+  <rect x="20" y="15" width="50" height="70" rx="3" fill="#6366f1" stroke="#4f46e5" stroke-width="2"/>
+  
+  <!-- Lines on document -->
+  <line x1="30" y1="30" x2="50" y2="30" stroke="white" stroke-width="2" stroke-linecap="round"/>
+  <line x1="30" y1="40" x2="55" y2="40" stroke="white" stroke-width="2" stroke-linecap="round"/>
+  <line x1="30" y1="50" x2="45" y2="50" stroke="white" stroke-width="2" stroke-linecap="round"/>
+  
+  <!-- AI Sparkle -->
+  <g transform="translate(60, 55)">
+    <path d="M0,-12 L2,0 L14,2 L2,4 L0,16 L-2,4 L-14,2 L-2,0 Z" fill="#fbbf24" stroke="#f59e0b" stroke-width="1"/>
+    <circle cx="0" cy="0" r="3" fill="#fef3c7"/>
+  </g>
+</svg>
+
