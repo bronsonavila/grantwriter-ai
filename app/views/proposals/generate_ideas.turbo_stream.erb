@@ -1,0 +1,10 @@
+<% if @ideas[:error] %>
+  <%= turbo_stream.update "generate_ideas_error" do %>
+    <div class="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50" role="alert">
+      <%= @ideas[:error] %>
+    </div>
+  <% end %>
+<% else %>
+  <%= turbo_stream.update "proposal_mission", @ideas[:mission] %>
+  <%= turbo_stream.update "proposal_goal", @ideas[:goal] %>
+<% end %>

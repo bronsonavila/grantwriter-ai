@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>GrantWriter AI</title>
+
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body class="flex flex-col min-h-[100lvh] bg-gray-100">
+    <main class="flex-grow">
+      <div class="mx-auto px-4 py-8 max-w-5xl">
+        <%= yield %>
+      </div>
+    </main>
+
+    <% if controller_name == 'proposals' && action_name == 'new' %>
+      <footer class="bg-gray-100">
+
+       <div class="mx-auto py-4 px-4 max-w-5xl text-center text-xs text-gray-400 relative">
+         <div id="toast-container" class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2"></div>
+
+         <%= button_to "Reset Session & Retry A/B Test", clear_session_path, method: :delete, class: "hover:text-gray-600" %>
+       </div>
+      </footer>
+    <% end %>
+  </body>
+</html>

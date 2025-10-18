@@ -1,0 +1,38 @@
+<div class="flex justify-between items-center mb-4">
+  <h1 class="text-3xl font-bold">Your Generated Draft</h1>
+
+  <%= link_to 'Generate Another Draft', new_proposal_path, class: "text-indigo-600 hover:text-indigo-900" %>
+</div>
+
+<div class="bg-gray-50 p-6 rounded-lg border border-gray-200" data-controller="clipboard" data-clipboard-proposal-id-value="<%= @proposal.id %>">
+    <div class="prose" data-clipboard-target="source">
+      <%= markdown_to_html(@proposal.generated_draft) %>
+    </div>
+
+    <div class="mt-4 text-right">
+      <button data-action="clipboard#copy" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-indigo-500 disabled:hover:bg-indigo-600">
+        Copy to Clipboard
+
+        <span data-clipboard-target="icon">
+          <svg class="ml-2 -mr-1 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+            <path d="M7 2a2 2 0 00-2 2v10a2 2 0 002 2h6a2 2 0 002-2V4a2 2 0 00-2-2H7zm0 2h6v10H7V4z"/>
+            <path d="M3 6a2 2 0 012-2h1v2H5v10h6v-1h2v1a2 2 0 01-2 2H5a2 2 0 01-2-2V6z"/>
+          </svg>
+        </span>
+      </button>
+    </div>
+  </div>
+
+  <div class="mt-4 text-sm text-gray-500">
+    <p>A/B Test Variation:
+      <% if @proposal.tone == 'formal' %>
+        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
+          <%= @proposal.tone.capitalize %>
+        </span>
+      <% else %>
+        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
+          <%= @proposal.tone.capitalize %>
+        </span>
+      <% end %>
+    </p>
+  </div>

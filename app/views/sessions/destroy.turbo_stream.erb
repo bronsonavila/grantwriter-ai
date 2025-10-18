@@ -1,0 +1,5 @@
+<%= turbo_stream.append "toast-container", partial: "shared/toast", locals: { message: "Session reset." } %>
+
+<turbo-stream action="reload" target="body">
+  <template></template>
+</turbo-stream>

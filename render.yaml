@@ -1,0 +1,32 @@
+services:
+  - type: web
+    name: grantwriter-ai
+    env: ruby
+    buildCommand: './bin/render-build.sh'
+    startCommand: 'bundle exec puma -C config/puma.rb'
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: grantwriter-ai-db
+          property: connectionString
+      - key: RAILS_MASTER_KEY
+        sync: false
+      - key: GOOGLE_API_KEY
+        sync: false
+      - key: SEGMENT_WRITE_KEY
+        sync: false
+      - key: REDIS_URL
+        fromService:
+          type: redis
+          name: grantwriter-ai-redis
+          property: connectionString
+
+databases:
+  - name: grantwriter-ai-db
+    databaseName: grantwriter_ai_production
+    user: grantwriter_ai
+
+  - name: grantwriter-ai-redis
+    type: redis
+    plan: free
+    maxmemoryPolicy: noeviction
