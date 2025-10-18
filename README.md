@@ -27,6 +27,11 @@ A Rails 7 demo application that uses Google Gemini AI to generate grant proposal
 ```bash
 git clone <repository-url>
 cd grantwriter_ai
+
+# Configure bundler to skip production gems (PostgreSQL)
+bundle config set --local without 'production'
+
+# Install dependencies
 bundle install
 yarn install
 ```

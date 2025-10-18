@@ -11,7 +11,8 @@ gem "rails", "~> 7.1.0"
 gem "sprockets-rails"
 
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3', '~> 1.4'
+gem 'sqlite3', '~> 1.4', group: [:development, :test]
+gem 'pg', '~> 1.5', group: :production
 gem 'mutex_m'
 gem "importmap-rails"
 gem "tailwindcss-rails", "~> 3.3.1"
