@@ -6,7 +6,7 @@
               method: :post,
               form_class: "inline-flex align-middle",
               class: "ml-2 inline-flex items-center justify-center h-8 w-8 rounded-full bg-indigo-100 text-indigo-600 hover:bg-indigo-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-indigo-500 disabled:cursor-not-allowed disabled:opacity-50 relative group disabled:hover:bg-indigo-100",
-              form: { data: { controller: "idea-button", action: "turbo:submit-start->idea-button#start turbo:submit-end->idea-button#end" } },
+              form: { data: { controller: "idea-button", action: "turbo:submit-start->idea-button#start turbo:submit-end->idea-button#end", turbo_stream: true } },
               id: "idea-button",
               data: { "idea-button-target": "button" } do %>
 
