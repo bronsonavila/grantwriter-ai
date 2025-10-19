@@ -5,31 +5,34 @@ export default class extends Controller {
   static values = { proposalId: String }
 
   connect() {
-    const button = this.element.querySelector('button')
-
-    this.originalButtonHTML = button.innerHTML
+    this.buttonStates = new Map()
   }
 
   copy(event) {
     event.preventDefault()
 
+    const button = event.currentTarget
     const text = this.sourceTarget.textContent
 
+    if (!this.buttonStates.has(button)) {
+      this.buttonStates.set(button, button.innerHTML)
+    }
+
     navigator.clipboard.writeText(text).then(() => {
-      this.showConfirmation()
+      this.showConfirmation(button)
       this.trackCopyEvent()
     })
   }
 
-  showConfirmation() {
-    const button = this.element.querySelector('button')
+  showConfirmation(button) {
+    const originalHTML = this.buttonStates.get(button)
 
     button.disabled = true
     button.innerHTML = 'Copied!'
 
     setTimeout(() => {
       button.disabled = false
-      button.innerHTML = this.originalButtonHTML
+      button.innerHTML = originalHTML
     }, 2000)
   }
 

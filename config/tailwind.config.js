@@ -16,7 +16,8 @@ module.exports = {
         'fade-in-right': 'fade-in-right 0.5s ease-out',
         'fade-out-right': 'fade-out-right 0.5s ease-in',
         'fade-in-up': 'fade-in-up 0.3s ease-out',
-        'fade-out-down': 'fade-out-down 0.3s ease-in'
+        'fade-out-down': 'fade-out-down 0.3s ease-in',
+        shake: 'shake 0.5s ease-in-out'
       },
       keyframes: {
         'fade-in-right': {
@@ -34,6 +35,11 @@ module.exports = {
         'fade-out-down': {
           '0%': { opacity: '1', transform: 'translateY(0)' },
           '100%': { opacity: '0', transform: 'translateY(10px)' }
+        },
+        shake: {
+          '0%, 100%': { transform: 'rotate(0deg)' },
+          '25%, 75%': { transform: 'rotate(-8deg)' },
+          '50%': { transform: 'rotate(8deg)' }
         }
       }
     }
